@@ -1,6 +1,9 @@
 
 # Created by https://www.gitignore.io/api/swift,xcode,macos,objective-c
 
+### Other Hidden Files ###
+AccessKeys.swift
+
 ### macOS ###
 *.DS_Store
 .AppleDouble

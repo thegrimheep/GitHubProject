@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		A1A17FB01E92B2D30072A2E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17FAF1E92B2D30072A2E8 /* AppDelegate.swift */; };
-		A1A17FB21E92B2D30072A2E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17FB11E92B2D30072A2E8 /* ViewController.swift */; };
 		A1A17FB51E92B2D30072A2E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A17FB31E92B2D30072A2E8 /* Main.storyboard */; };
 		A1A17FB71E92B2D30072A2E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1A17FB61E92B2D30072A2E8 /* Assets.xcassets */; };
 		A1A17FBA1E92B2D30072A2E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A17FB81E92B2D30072A2E8 /* LaunchScreen.storyboard */; };
+		A1A17FC21E92C9120072A2E8 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17FC11E92C9120072A2E8 /* GitHub.swift */; };
+		A1A17FC41E92CE650072A2E8 /* GitHubAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17FC31E92CE650072A2E8 /* GitHubAuthController.swift */; };
+		A1A17FC91E92EC210072A2E8 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17FC81E92EC210072A2E8 /* FoundationExtensions.swift */; };
+		A1A17FCB1E92FCA90072A2E8 /* AccessKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17FCA1E92FCA90072A2E8 /* AccessKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A1A17FAC1E92B2D30072A2E8 /* GitHubProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A17FAF1E92B2D30072A2E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A1A17FB11E92B2D30072A2E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A1A17FB41E92B2D30072A2E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1A17FB61E92B2D30072A2E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1A17FB91E92B2D30072A2E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1A17FBB1E92B2D30072A2E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1A17FC11E92C9120072A2E8 /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
+		A1A17FC31E92CE650072A2E8 /* GitHubAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubAuthController.swift; path = ../GitHubAuthController.swift; sourceTree = "<group>"; };
+		A1A17FC81E92EC210072A2E8 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
+		A1A17FCA1E92FCA90072A2E8 /* AccessKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,41 @@
 		A1A17FAE1E92B2D30072A2E8 /* GitHubProject */ = {
 			isa = PBXGroup;
 			children = (
-				A1A17FAF1E92B2D30072A2E8 /* AppDelegate.swift */,
-				A1A17FB11E92B2D30072A2E8 /* ViewController.swift */,
-				A1A17FB31E92B2D30072A2E8 /* Main.storyboard */,
-				A1A17FB61E92B2D30072A2E8 /* Assets.xcassets */,
-				A1A17FB81E92B2D30072A2E8 /* LaunchScreen.storyboard */,
-				A1A17FBB1E92B2D30072A2E8 /* Info.plist */,
+				A1A17FC71E92E2670072A2E8 /* Controllers */,
+				A1A17FC51E92E1F30072A2E8 /* Views */,
+				A1A17FC61E92E2540072A2E8 /* Models */,
 			);
 			path = GitHubProject;
+			sourceTree = "<group>";
+		};
+		A1A17FC51E92E1F30072A2E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A1A17FB81E92B2D30072A2E8 /* LaunchScreen.storyboard */,
+				A1A17FB31E92B2D30072A2E8 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A1A17FC61E92E2540072A2E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A1A17FC81E92EC210072A2E8 /* FoundationExtensions.swift */,
+				A1A17FB61E92B2D30072A2E8 /* Assets.xcassets */,
+				A1A17FC11E92C9120072A2E8 /* GitHub.swift */,
+				A1A17FCA1E92FCA90072A2E8 /* AccessKeys.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A1A17FC71E92E2670072A2E8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A1A17FBB1E92B2D30072A2E8 /* Info.plist */,
+				A1A17FAF1E92B2D30072A2E8 /* AppDelegate.swift */,
+				A1A17FC31E92CE650072A2E8 /* GitHubAuthController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1A17FB21E92B2D30072A2E8 /* ViewController.swift in Sources */,
+				A1A17FC91E92EC210072A2E8 /* FoundationExtensions.swift in Sources */,
+				A1A17FC21E92C9120072A2E8 /* GitHub.swift in Sources */,
+				A1A17FCB1E92FCA90072A2E8 /* AccessKeys.swift in Sources */,
+				A1A17FC41E92CE650072A2E8 /* GitHubAuthController.swift in Sources */,
 				A1A17FB01E92B2D30072A2E8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
