@@ -21,8 +21,8 @@ enum SaveOptions {
 }
 
 class GitHub {
-    let gitHubClientID = "7e653b85c2660205f804"
-    let gitHubClientSecret = "e6830f6a4bdfac0e2c610da57ae1b9515db46430"
+    let gitHubClientID = kGitHubClientID
+    let gitHubClientSecret = kGitHubClientSecret
     static let shared = GitHub()
     
     func oAuthRequestWith(parameters: [String: String]) {
