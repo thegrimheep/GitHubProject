@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivv-YD-Nm0">
-                                <rect key="frame" x="0.0" y="584" width="375" height="75"/>
+                                <rect key="frame" x="10" y="584" width="355" height="75"/>
                                 <color key="backgroundColor" red="0.11231491139999999" green="0.23595618360000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="6po-Ep-HXI"/>
@@ -37,7 +36,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6TJ-fW-gxE">
                                 <rect key="frame" x="16" y="308" width="343" height="50"/>
-                                <color key="backgroundColor" red="0.025711792015510437" green="1" blue="0.23724110765819217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="63S-U7-313"/>
                                     <constraint firstAttribute="height" constant="50" id="XUH-PH-DRY"/>
@@ -50,20 +49,20 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="6TJ-fW-gxE" secondAttribute="trailing" constant="16" id="4by-sd-Yvi"/>
-                            <constraint firstItem="6TJ-fW-gxE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="6Zf-FS-sal"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ivv-YD-Nm0" secondAttribute="bottom" constant="8" symbolic="YES" id="7y8-pT-XOX"/>
                             <constraint firstItem="6TJ-fW-gxE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8Zc-x8-FUc"/>
                             <constraint firstItem="6TJ-fW-gxE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="TEQ-lB-0KU"/>
-                            <constraint firstAttribute="trailing" secondItem="Ivv-YD-Nm0" secondAttribute="trailing" id="XQg-0y-rDm"/>
-                            <constraint firstItem="Ivv-YD-Nm0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YK4-e1-Iwd"/>
-                            <constraint firstAttribute="trailing" secondItem="Ivv-YD-Nm0" secondAttribute="trailing" id="bRV-9A-OBB"/>
-                            <constraint firstItem="6TJ-fW-gxE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="16" id="sS7-sa-dzL"/>
-                            <constraint firstItem="Ivv-YD-Nm0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tcX-9M-vao"/>
+                            <constraint firstAttribute="trailing" secondItem="Ivv-YD-Nm0" secondAttribute="trailing" constant="10" id="XQg-0y-rDm"/>
+                            <constraint firstItem="Ivv-YD-Nm0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="YK4-e1-Iwd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginOutlet" destination="Ivv-YD-Nm0" id="20A-Q0-hVB"/>
+                        <outlet property="printTokenOutlet" destination="6TJ-fW-gxE" id="Jb3-wY-wnl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

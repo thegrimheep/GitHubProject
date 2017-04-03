@@ -9,9 +9,13 @@
 import UIKit
 
 class GitHubAuthController: UIViewController {
+    @IBOutlet weak var printTokenOutlet: UIButton!
+    @IBOutlet weak var loginOutlet: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        printTokenOutlet.layer.cornerRadius = 10
+        loginOutlet.layer.cornerRadius = 10
 
         // Do any additional setup after loading the view.
     }
