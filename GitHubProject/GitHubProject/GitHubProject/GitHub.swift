@@ -11,6 +11,7 @@ import UIKit
 let kOAuthBaseURLString = "https://github.com/login/oauth/"
 
 typealias GitHubOAuthCompletion = (Bool) -> ()
+typealias FetchReposCompletion = ([Repository]?) -> ()
 
 enum GitHubAuthError : Error {
     case extractingCode
@@ -104,4 +105,52 @@ class GitHub {
         }
         return nil
     }
+    
+    func getRepos(completion: @escaping FetchReposCompletion) { // this is called in the repoviewcontroller inside of update.
+        func returnToMain(results: [Repository]?) {
+            OperationQueue.main.addOperation {
+                completion(results)
+            }
+        }
+        
+        self.components.path = "/user/repos"
+        guard let url = self.components.url else {
+            returnToMain(results: nil)
+            return
+        }
+        self.session.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                returnToMain(results: nil)
+                return
+            }
+            if let data = data {
+                var repositories = [Repository]()
+                
+                do {
+                    if let rootJson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [[String : Any]] {
+                        for repositoryJSON in rootJson {
+                            if let repo = Repository(json: repositoryJSON) {
+                                repositories.append(repo)
+                            }
+                        }
+                        returnToMain(results: repositories)
+                    }
+                } catch {
+                    
+                }
+            }
+        }.resume()
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
