@@ -11,6 +11,12 @@ import UIKit
 class GitHubAuthController: UIViewController {
     @IBOutlet weak var printTokenOutlet: UIButton!
     @IBOutlet weak var loginOutlet: UIButton!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDefaults.standard.getAccessToken() != nil {
+            loginOutlet.isHidden = true
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
