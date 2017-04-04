@@ -21,9 +21,25 @@ enum SaveOptions {
 }
 
 class GitHub {
+    private var session: URLSession
+    private var components: URLComponents
+    
     let gitHubClientID = kGitHubClientID
     let gitHubClientSecret = kGitHubClientSecret
     static let shared = GitHub()
+    
+    private init() {
+        self.session = URLSession(configuration: .default)
+        self.components = URLComponents()
+        
+        self.components.scheme = "https"
+        self.components.host = "api.github.com"
+        
+        if let token = UserDefaults.standard.getAccessToken() {
+            let queryItem = URLQueryItem(name: "access_token", value: token)
+            self.components.queryItems = [queryItem]
+        }
+    }
     
     func oAuthRequestWith(parameters: [String: String]) {
         var parametersString = ""
