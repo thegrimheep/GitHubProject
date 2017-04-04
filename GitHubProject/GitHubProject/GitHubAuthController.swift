@@ -11,6 +11,16 @@ import UIKit
 class GitHubAuthController: UIViewController {
     @IBOutlet weak var printTokenOutlet: UIButton!
     @IBOutlet weak var loginOutlet: UIButton!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDefaults.standard.getAccessToken() == nil {
+            loginOutlet.isEnabled = true
+            loginOutlet.isHidden = false
+        } else {
+            loginOutlet.isEnabled = false
+            loginOutlet.isHidden = true
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +31,16 @@ class GitHubAuthController: UIViewController {
     }
 
     @IBAction func printTokenPressed(_ sender: Any) {
-        
+        let token = UserDefaults.standard.getAccessToken()
+        print(token)
     }
     @IBAction func loginButtonPressed(_ sender: Any) {
-        let parameters = ["scope" : "email,user"]
+        let parameters = ["scope" : "email,user,repo"]
         GitHub.shared.oAuthRequestWith(parameters: parameters)
     }
 
-
+    func dismissAuthController() {
+        self.view.removeFromSuperview()
+        self.removeFromParentViewController()
+    }
 }
