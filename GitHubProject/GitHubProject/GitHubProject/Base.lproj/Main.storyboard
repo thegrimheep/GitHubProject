@@ -68,10 +68,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
-        <!--View Controller-->
+        <!--Repo View Controller-->
         <scene sceneID="dEB-wi-sXq">
             <objects>
-                <viewController id="2Nk-Oz-DUb" sceneMemberID="viewController">
+                <viewController id="2Nk-Oz-DUb" customClass="RepoViewController" customModule="GitHubProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sIG-qi-ZNI"/>
                         <viewControllerLayoutGuide type="bottom" id="urj-MF-avs"/>

@@ -18,7 +18,7 @@ class RepoViewController: UIViewController, UISearchBarDelegate { //implement th
     }
 
     func update() {
-        print("upadte repo controller here")
+        print("update repo controller here")
         GitHub.shared.getRepos { (repositories) in
             //update tableview
         }
