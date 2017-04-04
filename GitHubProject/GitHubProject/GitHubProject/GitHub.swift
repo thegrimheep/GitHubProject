@@ -73,4 +73,19 @@ class GitHub {
             complete(success: false)
         }
     }
+    
+    func accessTokenFrom(_ string: String) -> String? {
+        print(string)
+        if string.contains("access_token") {
+            let components = string.components(separatedBy: "&")
+            for component in components {
+                print(component)
+                if component.contains("access_token") {
+                    let token = component.components(separatedBy: "=").last
+                    return token
+                }
+            }
+        }
+        return nil
+    }
 }
