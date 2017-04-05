@@ -13,6 +13,7 @@ class RepoViewController: UIViewController, UISearchBarDelegate { //implement th
     @IBOutlet weak var listReops: UITableView!
     
     var allRepos = [Repository]()
+//    var searchedRepos = [Repository]?()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class RepoViewController: UIViewController, UISearchBarDelegate { //implement th
             
             if let repositories = repositories {
                 self.allRepos = repositories
+//                self.searchedRepos = repositories
             }
             self.listReops.reloadData()
         }
@@ -49,4 +51,4 @@ extension RepoViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
-// workflow 1. add a search bar in storyboard. 2. create and outlet 3. assign the delegate to self 4. then conform to the protocol. 5. implement the options you need, searhbar search button clicked or searchbar text did change.  Also get the searchbar cancel button clicked. slef.view resign firstResponder
+
