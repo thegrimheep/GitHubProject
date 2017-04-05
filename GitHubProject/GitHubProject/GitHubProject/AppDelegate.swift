@@ -36,12 +36,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.authController = authViewController
                 self.repoController = repoViewController
             }
+        } else {
+            print("NO")
         }
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         let code = try? GitHub.shared.getCodeFrom(url: url)
-        print(code)
+        
         GitHub.shared.tokenRequestFor(url: url, saveOptions: .userDefaults) { (success) in
             if let authViewController = self.authController, let repoViewController = self.repoController {
                 authViewController.dismissAuthController()

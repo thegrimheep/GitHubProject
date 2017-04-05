@@ -9,7 +9,7 @@
 import UIKit
 
 class GitHubAuthController: UIViewController {
-    @IBOutlet weak var printTokenOutlet: UIButton!
+    
     @IBOutlet weak var loginOutlet: UIButton!
     
     override func viewDidAppear(_ animated: Bool) {
@@ -24,16 +24,11 @@ class GitHubAuthController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        printTokenOutlet.layer.cornerRadius = 10
         loginOutlet.layer.cornerRadius = 10
 
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func printTokenPressed(_ sender: Any) {
-        let token = UserDefaults.standard.getAccessToken()
-        print(token)
-    }
     @IBAction func loginButtonPressed(_ sender: Any) {
         let parameters = ["scope" : "email,user,repo"]
         GitHub.shared.oAuthRequestWith(parameters: parameters)
