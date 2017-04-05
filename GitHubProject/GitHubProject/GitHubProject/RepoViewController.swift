@@ -17,12 +17,11 @@ class RepoViewController: UIViewController, UISearchBarDelegate { //implement th
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.searchBarButton.delegate = self
         self.listReops.delegate = self
         self.listReops.dataSource = self
         update()
-
-        // Do any additional setup after loading the view.
     }
 
     func update() {
@@ -35,11 +34,25 @@ class RepoViewController: UIViewController, UISearchBarDelegate { //implement th
             self.listReops.reloadData()
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == RepoDetailViewController.identifier {
+            segue.destination.transitioningDelegate = self
+        }
+    }
 
 }
 
+extension RepoViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        return CustomTransition(duration: 1.0)
+    }
+}
+
 //MARK: UITableViewDelegate
-extension RepoViewController: UITableViewDelegate, UITableViewDataSource {
+extension RepoViewController: UITableViewDataSource, UITableViewDelegate  {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allRepos.count
     }
@@ -49,6 +62,10 @@ extension RepoViewController: UITableViewDelegate, UITableViewDataSource {
         //cell.repoDescriptionLabel.text = allRepos[indexPath.row].description
         //cell.languageDescriptionLabel.text = allRepos[indexPath.row].language
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: RepoDetailViewController.identifier, sender: nil)
     }
 }
 

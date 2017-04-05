@@ -19,6 +19,8 @@
 		A1A17FCF1E940D590072A2E8 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17FCE1E940D590072A2E8 /* UIExtensions.swift */; };
 		A1A17FD11E9419540072A2E8 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17FD01E9419540072A2E8 /* Repository.swift */; };
 		A1A17FD31E9468DE0072A2E8 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17FD21E9468DE0072A2E8 /* RepoTableViewCell.swift */; };
+		A1E2A4541E956E88008A708E /* RepoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E2A4531E956E88008A708E /* RepoDetailViewController.swift */; };
+		A1E2A4561E95705F008A708E /* CustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E2A4551E95705F008A708E /* CustomTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		A1A17FCE1E940D590072A2E8 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		A1A17FD01E9419540072A2E8 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		A1A17FD21E9468DE0072A2E8 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		A1E2A4531E956E88008A708E /* RepoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailViewController.swift; sourceTree = "<group>"; };
+		A1E2A4551E95705F008A708E /* CustomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		A1A17FC61E92E2540072A2E8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A1E2A4551E95705F008A708E /* CustomTransition.swift */,
 				A1A17FCE1E940D590072A2E8 /* UIExtensions.swift */,
 				A1A17FD01E9419540072A2E8 /* Repository.swift */,
 				A1A17FC81E92EC210072A2E8 /* FoundationExtensions.swift */,
@@ -101,6 +106,7 @@
 		A1A17FC71E92E2670072A2E8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A1E2A4531E956E88008A708E /* RepoDetailViewController.swift */,
 				A1A17FCC1E940C090072A2E8 /* RepoViewController.swift */,
 				A1A17FBB1E92B2D30072A2E8 /* Info.plist */,
 				A1A17FAF1E92B2D30072A2E8 /* AppDelegate.swift */,
@@ -184,11 +190,13 @@
 			files = (
 				A1A17FC91E92EC210072A2E8 /* FoundationExtensions.swift in Sources */,
 				A1A17FCF1E940D590072A2E8 /* UIExtensions.swift in Sources */,
+				A1E2A4561E95705F008A708E /* CustomTransition.swift in Sources */,
 				A1A17FC21E92C9120072A2E8 /* GitHub.swift in Sources */,
 				A1A17FD11E9419540072A2E8 /* Repository.swift in Sources */,
 				A1A17FCD1E940C090072A2E8 /* RepoViewController.swift in Sources */,
 				A1A17FD31E9468DE0072A2E8 /* RepoTableViewCell.swift in Sources */,
 				A1A17FCB1E92FCA90072A2E8 /* AccessKeys.swift in Sources */,
+				A1E2A4541E956E88008A708E /* RepoDetailViewController.swift in Sources */,
 				A1A17FC41E92CE650072A2E8 /* GitHubAuthController.swift in Sources */,
 				A1A17FB01E92B2D30072A2E8 /* AppDelegate.swift in Sources */,
 			);
