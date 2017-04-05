@@ -16,6 +16,7 @@ class RepoViewController: UIViewController, UISearchBarDelegate { //implement th
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.searchBarButton.delegate = self
         self.listReops.delegate = self
         self.listReops.dataSource = self
         update()
@@ -35,6 +36,7 @@ class RepoViewController: UIViewController, UISearchBarDelegate { //implement th
 
 }
 
+//MARK: UITableViewDelegate
 extension RepoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allRepos.count
@@ -42,6 +44,8 @@ extension RepoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RepoItems", for: indexPath) as! RepoTableViewCell
         cell.repoNameLabel.text = allRepos[indexPath.row].name
+        //cell.repoDescriptionLabel.text = allRepos[indexPath.row].description
+        //cell.languageDescriptionLabel.text = allRepos[indexPath.row].language
         return cell
     }
 }
