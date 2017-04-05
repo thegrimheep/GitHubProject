@@ -35,11 +35,6 @@ class GitHub {
         
         self.components.scheme = "https"
         self.components.host = "api.github.com"
-        
-        if let token = UserDefaults.standard.getAccessToken() {
-            let queryItem = URLQueryItem(name: "access_token", value: token)
-            self.components.queryItems = [queryItem]
-        }
     }
     
     func oAuthRequestWith(parameters: [String: String]) {
@@ -104,6 +99,12 @@ class GitHub {
     }
     
     func getRepos(completion: @escaping FetchReposCompletion) { // this is called in the repoviewcontroller inside of update.
+        
+        if let token = UserDefaults.standard.getAccessToken() {
+            let queryItem = URLQueryItem(name: "access_token", value: token)
+            self.components.queryItems = [queryItem]
+        }
+        
         func returnToMain(results: [Repository]?) {
             OperationQueue.main.addOperation {
                 completion(results)
