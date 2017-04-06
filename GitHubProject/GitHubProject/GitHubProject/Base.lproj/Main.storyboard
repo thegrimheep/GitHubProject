@@ -109,8 +109,15 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NPb-2U-lhR">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAh-j1-rUK">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="544.5"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dA8-GD-pby">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="524"/>
+                                        <state key="normal" title="More Details"/>
+                                        <connections>
+                                            <action selector="moreDetailsPressed:" destination="Vjq-bk-D9m" eventType="touchUpInside" id="0gE-7q-VBH"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAh-j1-rUK">
+                                        <rect key="frame" x="0.0" y="524" width="375" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -156,10 +163,13 @@
                             <constraint firstItem="WkX-5M-kq4" firstAttribute="top" secondItem="NPb-2U-lhR" secondAttribute="bottom" id="hij-yH-xQf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="moreDetailsPressed" destination="dA8-GD-pby" id="ZOr-fa-Dv6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NGr-ET-IHg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1652" y="139.880059970015"/>
+            <point key="canvasLocation" x="1695" y="139"/>
         </scene>
     </scenes>
     <resources>
