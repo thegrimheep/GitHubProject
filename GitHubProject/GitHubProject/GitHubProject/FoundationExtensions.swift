@@ -40,3 +40,23 @@ extension Date {
         return formatter
     }
 }
+
+extension String {
+    func validate() -> Bool {
+        let pattern = "[^0-9a-zA-Z_-]"
+        do {
+            let regex = try NSRegularExpression(pattern: pattern, options: .caseInsensitive)
+            let range = NSRange(location: 0, length: self.characters.count)
+            let matches = regex.numberOfMatches(in: self, options: .reportCompletion, range: range)
+            
+            if matches > 0 {
+                return false
+            }
+            
+            return true
+            
+        } catch {
+            return false
+        }
+    }
+}
