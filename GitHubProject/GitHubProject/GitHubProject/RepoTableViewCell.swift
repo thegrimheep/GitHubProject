@@ -11,6 +11,8 @@ import UIKit
 class RepoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var repoNameLabel: UILabel!
+    @IBOutlet weak var repoDescriptionLabel: UILabel!
+    @IBOutlet weak var repoLanguageLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

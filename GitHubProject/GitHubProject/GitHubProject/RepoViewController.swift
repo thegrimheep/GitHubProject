@@ -17,10 +17,13 @@ class RepoViewController: UIViewController, UISearchBarDelegate { //implement th
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let repoXib = UINib(nibName: RepoTableViewCell.identifier, bundle: Bundle.main)
+        self.listReops.register(repoXib, forCellReuseIdentifier: RepoTableViewCell.identifier)
         self.searchBarButton.delegate = self
         self.listReops.delegate = self
         self.listReops.dataSource = self
+        self.listReops.estimatedRowHeight = 100
+        self.listReops.rowHeight = UITableViewAutomaticDimension
         update()
     }
 
@@ -57,10 +60,10 @@ extension RepoViewController: UITableViewDataSource, UITableViewDelegate  {
         return allRepos.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RepoItems", for: indexPath) as! RepoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.identifier, for: indexPath) as! RepoTableViewCell
         cell.repoNameLabel.text = allRepos[indexPath.row].name
-        //cell.repoDescriptionLabel.text = allRepos[indexPath.row].description
-        //cell.languageDescriptionLabel.text = allRepos[indexPath.row].language
+        cell.repoDescriptionLabel.text = allRepos[indexPath.row].description
+        cell.repoLanguageLabel.text = allRepos[indexPath.row].language
         return cell
     }
     
