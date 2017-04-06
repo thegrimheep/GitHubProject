@@ -42,6 +42,7 @@ class RepoViewController: UIViewController, UISearchBarDelegate { //implement th
         
         if segue.identifier == RepoDetailViewController.identifier {
             segue.destination.transitioningDelegate = self
+            //add if let here 
         }
     }
 
