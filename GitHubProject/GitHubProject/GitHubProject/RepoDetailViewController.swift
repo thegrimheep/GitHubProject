@@ -14,7 +14,8 @@ class RepoDetailViewController: UIViewController {
         guard let repo = repo else {
             return
         }
-        presentSafariViewControllerWith(urlString: repo?.repoUrlString)
+//        presentSafariViewControllerWith(urlString: repo?.repoUrlString)
+        presentWebViewControllerWith(urlString: repo.repoUrlString)
     }
     
     func presentSafariViewControllerWith(urlString: String) {
@@ -24,6 +25,12 @@ class RepoDetailViewController: UIViewController {
         
         let safariController = SFSafariViewController(url: url)
         self.present(safariController, animated: true, completion: nil)
+    }
+    func presentWebViewControllerWith(urlString: String) {
+        let webController = WebViewController()
+        webController.url = urlString
+        
+        self.present(webController, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
