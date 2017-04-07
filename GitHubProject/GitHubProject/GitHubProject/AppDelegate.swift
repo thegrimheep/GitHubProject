@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         if let token = UserDefaults.standard.getAccessToken() {
-            print(token)
         } else {
             presentAuthController()
         }
@@ -36,8 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.authController = authViewController
                 self.repoController = repoViewController
             }
-        } else {
-            print("NO")
+        }
+        else {
+            
         }
     }
     
