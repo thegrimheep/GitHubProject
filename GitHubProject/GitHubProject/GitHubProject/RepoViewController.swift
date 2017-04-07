@@ -24,13 +24,13 @@ class RepoViewController: UIViewController, UISearchBarDelegate { //implement th
         self.listReops.dataSource = self
         self.listReops.estimatedRowHeight = 100
         self.listReops.rowHeight = UITableViewAutomaticDimension
-        
+        print("inside view did load \(self.allRepos.count)")
         update()
     }
 
     func update() {
         GitHub.shared.getRepos { (repositories) in
-            
+            print("Inside of update: \(repositories)")
             if let repositories = repositories {
                 self.allRepos = repositories
 //                self.searchedRepos = repositories
@@ -77,7 +77,7 @@ extension RepoViewController: UITableViewDataSource, UITableViewDelegate  {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        print("Inside of didSelectRowAt: \(self.allRepos[indexPath.row])")
         self.performSegue(withIdentifier: RepoDetailViewController.identifier, sender: nil)
     }
 }
