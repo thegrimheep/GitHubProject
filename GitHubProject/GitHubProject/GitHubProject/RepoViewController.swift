@@ -24,6 +24,7 @@ class RepoViewController: UIViewController, UISearchBarDelegate { //implement th
         self.listReops.dataSource = self
         self.listReops.estimatedRowHeight = 100
         self.listReops.rowHeight = UITableViewAutomaticDimension
+        
         update()
     }
 
@@ -41,7 +42,15 @@ class RepoViewController: UIViewController, UISearchBarDelegate { //implement th
         super.prepare(for: segue, sender: sender)
         
         if segue.identifier == RepoDetailViewController.identifier {
+            if let selectedIndex = self.listReops.indexPathForSelectedRow?.row {
+                let selectedRepo = self.allRepos[selectedIndex]
+                guard let destinationController = segue.destination as? RepoDetailViewController else {
+                    return
+                }
+                destinationController.repo = selectedRepo
+            }
             segue.destination.transitioningDelegate = self
+            
         }
     }
 
@@ -68,7 +77,16 @@ extension RepoViewController: UITableViewDataSource, UITableViewDelegate  {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         self.performSegue(withIdentifier: RepoDetailViewController.identifier, sender: nil)
     }
 }
 
+//if !searchText.validate() {
+//    let lastIndex = searchText.index(before: searchText.endIndex)
+//    searchBar.text = searchText.substring(to: lastIndex)
+//}
+//
+//if let searchedText = searchBar.text {
+//    self.displayRepos = self.allRepos.filter({$0.name.contains(searchedText)})
+//}

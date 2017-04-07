@@ -22,6 +22,7 @@
 		A1E2A4541E956E88008A708E /* RepoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E2A4531E956E88008A708E /* RepoDetailViewController.swift */; };
 		A1E2A4561E95705F008A708E /* CustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E2A4551E95705F008A708E /* CustomTransition.swift */; };
 		A1E2A45A1E95B256008A708E /* RepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E2A4581E95B256008A708E /* RepoTableViewCell.xib */; };
+		A1E2A45C1E96B330008A708E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E2A45B1E96B330008A708E /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		A1E2A4531E956E88008A708E /* RepoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailViewController.swift; sourceTree = "<group>"; };
 		A1E2A4551E95705F008A708E /* CustomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransition.swift; sourceTree = "<group>"; };
 		A1E2A4581E95B256008A708E /* RepoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepoTableViewCell.xib; sourceTree = "<group>"; };
+		A1E2A45B1E96B330008A708E /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				A1E2A4531E956E88008A708E /* RepoDetailViewController.swift */,
+				A1E2A45B1E96B330008A708E /* WebViewController.swift */,
 				A1A17FCC1E940C090072A2E8 /* RepoViewController.swift */,
 				A1A17FBB1E92B2D30072A2E8 /* Info.plist */,
 				A1A17FAF1E92B2D30072A2E8 /* AppDelegate.swift */,
@@ -199,6 +202,7 @@
 				A1A17FD11E9419540072A2E8 /* Repository.swift in Sources */,
 				A1A17FCD1E940C090072A2E8 /* RepoViewController.swift in Sources */,
 				A1A17FD31E9468DE0072A2E8 /* RepoTableViewCell.swift in Sources */,
+				A1E2A45C1E96B330008A708E /* WebViewController.swift in Sources */,
 				A1A17FCB1E92FCA90072A2E8 /* AccessKeys.swift in Sources */,
 				A1E2A4541E956E88008A708E /* RepoDetailViewController.swift in Sources */,
 				A1A17FC41E92CE650072A2E8 /* GitHubAuthController.swift in Sources */,

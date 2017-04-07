@@ -44,7 +44,7 @@ class GitHub {
             parametersString += "&\(key)=\(value)"
         }
         if let requestURL = URL(string: "\(kOAuthBaseURLString)authorize?client_id=\(gitHubClientID)\(parametersString)") {
-            print(requestURL.absoluteString)
+            
             UIApplication.shared.open(requestURL)
         }
     }
@@ -83,7 +83,7 @@ class GitHub {
                         let components = dataString.components(separatedBy: "&")
                         
                         for component in components {
-                            print(component)
+                            
                             if component.contains("access_token") {
                                 let token = component.components(separatedBy: "=").last!
                                 complete(success: UserDefaults.standard.save(accessToken: token))
@@ -93,7 +93,7 @@ class GitHub {
                 }).resume()
             }
         } catch {
-            print(error)
+            
             complete(success: false)
         }
     }
@@ -128,10 +128,10 @@ class GitHub {
                 
                 do {
                     if let rootJson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [[String : Any]] {
-                        print(rootJson)
                         for repositoryJSON in rootJson {
                             if let repo = Repository(json: repositoryJSON) {
                                 repositories.append(repo)
+                                
                             }
                         }
                         returnToMain(results: repositories)

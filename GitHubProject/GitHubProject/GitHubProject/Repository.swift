@@ -9,22 +9,35 @@
 import UIKit
 
 class Repository {
+    let repoUrlString: String
     let name: String
-    let description: String
-    let language: String
+    let description: String?
+    let language: String?
+    var stars: Int? = 0
+    let isFork: Bool
+    let createdAt: String
+    
     
     init?(json: [String: Any]) {
-        print("complete this for lab, good luck")
-        if let name = json["name"] as? String, let description = json["description"] as? String, let language = json["language"] as? String {
+//        if let name =
+//            let description =
+//            let language =
+//            let stars =
+//            let repoUrlString =
+//            let isFork =
+//            let createdAt =
+        self.repoUrlString = json["html_url"] as? String ?? "https://www.github.com"
+        self.name = json["name"] as! String
+        self.description = json["description"] as? String
+        self.language = json["language"] as? String
         
-        self.name = name
-        self.description = description
-        self.language = language
-        print(json)
+        self.isFork = json["fork"] as! Bool
+        self.createdAt = json["created_at"] as! String
         
-        } else {
-         return nil   
+        if let stars = json["stargazer_count"] as? Int {
+            self.stars = stars
+        }
         }
     }
-}
+
 
