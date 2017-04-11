@@ -25,8 +25,6 @@ class GitHubAuthController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginOutlet.layer.cornerRadius = 10
-
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func loginButtonPressed(_ sender: Any) {

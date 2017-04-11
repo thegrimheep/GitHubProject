@@ -20,6 +20,7 @@ class WebViewController: UIViewController {
         guard let url = URL(string: self.url) else {
             return
         }
+        
         webView.frame = self.view.frame
         self.view.addSubview(self.webView)
         

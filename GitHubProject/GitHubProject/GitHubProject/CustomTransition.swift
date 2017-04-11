@@ -18,11 +18,13 @@ class CustomTransition: NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return self.duration
     }
+    
     //you can also add a from. 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let toViewController = transitionContext.viewController(forKey: .to) else {
             return
         }
+        
         transitionContext.containerView.addSubview(toViewController.view)
         toViewController.view.alpha = 0.0 // makes it invisible
         UIView.animate(withDuration: self.duration, animations: {
